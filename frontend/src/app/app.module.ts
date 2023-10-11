@@ -7,6 +7,7 @@ import { LogInComponent } from './actionPages/log-in/log-in.component';
 import { RegisterComponent } from './actionPages/register/register.component';
 import { ForgotPasswordComponent } from './actionPages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './actionPages/reset-password/reset-password.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ResetPasswordComponent } from './actionPages/reset-password/reset-passw
     LogInComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
