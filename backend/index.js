@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const app = express();
 
 app.use(cors());
-const app = express();
 require('dotenv').config();
 
 // Now, you can access your environment variables like this:
@@ -13,14 +13,24 @@ const apiKey = process.env.API_KEY;
 
 // Use these variables in your application as needed.
 app.use(express.json());
+
+
+//Routes 
+const authRoutes = require('./routers/auth')
+//
+app.use('/auth', authRoutes)
+
 mongoose.connect(databaseUrl).then(()=>{
     console.log('successfully connected with database')
 }).catch((err)=>{
     console.error('error in connecting with database',err)
 })
 
-
-
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  });
 
 app.listen(port, ()=> console.log(`The server is running on port ${port}`))
 
