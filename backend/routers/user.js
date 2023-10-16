@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
     try {
-      const userList = await UserModel.find().select('-password');
+      const userList = await UserModel.find().select('-password -_id');
   
       if (!userList || userList.length === 0) {
         return res.status(404).json({ success: false, message: 'No users found' });
