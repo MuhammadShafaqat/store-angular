@@ -16,6 +16,20 @@ router.get('/', async (req, res) => {
       return res.status(500).json({ success: false, message: 'Server Error' });
     }
   });
+  //count users
+ router.get('/count', async (req, res) => {
+  try {
+    // Use Mongoose to count the documents in the "categories" collection
+    const userCount = await UserModel.countDocuments();
+
+    return res.status(200).json({ success: true, count: userCount });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+}); 
+
+
 // For a single user
 router.get('/:id', async (req, res) => {
     try {
@@ -43,7 +57,7 @@ router.delete('/:id', async (req, res) => {
       return res.status(500).json({ success: false, message: 'Server Error' });
     }
   });
-  
+ 
   
   
 
