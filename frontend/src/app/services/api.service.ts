@@ -9,7 +9,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
 login(userObj:any){
- return this.http.post<any>('http://localhost:4000/auth', userObj)
+ return this.http.post<any>('http://localhost:4000/auth' + '/signIn', userObj)
 }
 
   signUp(userObj:any){
