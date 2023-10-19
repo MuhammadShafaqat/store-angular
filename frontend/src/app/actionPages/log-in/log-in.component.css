@@ -3,12 +3,13 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+   
   }
   
   .signin-form {
     width: 300px;
     padding: 20px;
-    background-color: #fff;
+    background-color: aqua;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -49,5 +50,15 @@
   
   .btn:hover {
     background-color: #0056b3;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: blue; /* Change color on hover */
   }
   

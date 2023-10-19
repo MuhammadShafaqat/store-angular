@@ -1,4 +1,4 @@
-<h1>Login Form</h1>
+
 <div class="signin-container">
     <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="signin-form">
       <h1>Sign In</h1>
@@ -13,6 +13,12 @@
       <button type="submit" class="btn btn-primary">Sign In</button>
   
       <div *ngIf="signInError" class="error-message">{{ signInError }}</div>
+      <div class="d-flex justify-content-between">
+        <a routerLink="/forgotpassword" class="">Forget Password</a>
+        <a routerLink="/register" class="">Create account</a>
+      </div>
+
+
     </form>
   </div>
   

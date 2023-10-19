@@ -6,6 +6,7 @@ import { ForgotPasswordComponent } from './actionPages/forgot-password/forgot-pa
 import { ResetPasswordComponent } from './actionPages/reset-password/reset-password.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {path:'login', component:LogInComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'forgotpassword', component:ForgotPasswordComponent},
   {path:'resetpassword',component:ResetPasswordComponent},
   {path:'header', component:HeaderComponent},
-  {path:'footer', component:FooterComponent}
+  {path:'footer', component:FooterComponent},
+  {path:'home', component:HomeComponent}
 ];
 
 @NgModule({
