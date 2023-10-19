@@ -16,6 +16,10 @@ login(userObj:any){
     return this.http.post<any>('http://localhost:4000/auth' + '/register', userObj)
   }
 
+  signOut(){
+    localStorage.removeItem('token');
+  }
+
 }
 
 
