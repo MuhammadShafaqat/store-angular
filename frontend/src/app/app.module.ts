@@ -10,6 +10,7 @@ import { ResetPasswordComponent } from './actionPages/reset-password/reset-passw
 import { HeaderComponent } from './shared/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     RegisterComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

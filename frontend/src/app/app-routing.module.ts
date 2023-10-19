@@ -4,12 +4,16 @@ import { LogInComponent } from './actionPages/log-in/log-in.component';
 import { RegisterComponent } from './actionPages/register/register.component';
 import { ForgotPasswordComponent } from './actionPages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './actionPages/reset-password/reset-password.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 const routes: Routes = [
   {path:'login', component:LogInComponent},
   {path:'register', component:RegisterComponent},
   {path:'forgotpassword', component:ForgotPasswordComponent},
-  {path:'resetpassword',component:ResetPasswordComponent}
+  {path:'resetpassword',component:ResetPasswordComponent},
+  {path:'header', component:HeaderComponent},
+  {path:'footer', component:FooterComponent}
 ];
 
 @NgModule({
