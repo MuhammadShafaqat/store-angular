@@ -88,7 +88,8 @@ router.post('/register', async (req, res) => {
       from: 'shafaqat.math@gmail.com',
       to: email,
       subject: 'Password Reset Request',
-      text: `To reset your password, click on the following link: http://http://localhost:4200/reset/${token}`,
+      text: `To reset your password, click on the following link: http://localhost:4200/resetpassword/${token}
+      `,
     };
   
     transporter.sendMail(mailOptions, async (err, info) => {
