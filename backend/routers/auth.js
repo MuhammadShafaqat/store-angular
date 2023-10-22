@@ -5,6 +5,9 @@ const UserModel = require('../models/authModel/AuthModel');
 const saltRounds = 10;
 const secretKey = 'yourSecretKey'; // Replace with your secret key
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
+const TokenModel = require('../models/authModel/TokenModel');
+// const TokenModel = require('../models/authModel/AuthModel');
 
 // signIn post request
 router.post('/signIn', async (req, res)=>{
@@ -58,6 +61,75 @@ router.post('/register', async (req, res) => {
       res.status(400).json({ message: 'Registration failed', error: err.message });
     }
   });
+  //
 
+
+  // Configure Nodemailer for sending emails
+  const transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: 'shafaqat.math@gmail.com',
+      pass: 'jcvn bzjl ulpx cumc',
+    },
+  });
+  
+  // Send a password reset email with a JWT token
+  router.post('/send-reset-email', async (req, res) => {
+    const email = req.body.email;
+    const user = await UserModel.findOne({ email });
+  
+    if (!user) {
+      return res.status(400).json({ error: 'User not found' });
+    }
+  
+    const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: '300s' });
+  
+    const mailOptions = {
+      from: 'shafaqat.math@gmail.com',
+      to: email,
+      subject: 'Password Reset Request',
+      text: `To reset your password, click on the following link: http://http://localhost:4200/reset/${token}`,
+    };
+  
+    transporter.sendMail(mailOptions, async (err, info) => {
+      if (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Email not sent' });
+      } else {
+        // Save the token and email in the SendMail collection
+        const sendMail = new TokenModel({ email, token });
+        await sendMail.save();
+  
+        res.json({ message: 'Email sent successfully' });
+      }
+    });
+  });
+  
+  // Reset the password using a valid JWT token
+  router.post('/reset-password', async (req, res) => {
+    const token = req.body.token;
+    const newPassword = req.body.newPassword;
+  
+    try {
+      const decoded = jwt.verify(token, secretKey);
+      const userId = decoded.userId;
+      const user = await UserModel.findById(userId);
+  
+      if (user) {
+        // Update the user's password in your database.
+        user.password = newPassword;
+        await user.save();
+        
+        // Remove the token from the SendMail collection
+        await TokenModel.deleteMany({ email: user.email });
+  
+        res.json({ message: 'Password reset successful' });
+      } else {
+        res.status(400).json({ error: 'Invalid token' });
+      }
+    } catch (error) {
+      res.status(400).json({ error: 'Invalid or expired token' });
+    }
+  });
   module.exports = router
   
