@@ -7,6 +7,8 @@ import { ResetPasswordComponent } from './actionPages/reset-password/reset-passw
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ShoppingPageComponent } from './components/shopping-page/shopping-page.component';
 
 const routes: Routes = [
   {path:'login', component:LogInComponent},
@@ -15,7 +17,10 @@ const routes: Routes = [
   {path:'resetpassword/:token',component:ResetPasswordComponent},
   {path:'header', component:HeaderComponent},
   {path:'footer', component:FooterComponent},
-  {path:'home', component:HomeComponent}
+  {path:'home', component:HomeComponent},
+  {path:'productDetail', component:ProductDetailComponent},
+  {path:'shoppingPage', component:ShoppingPageComponent}
+
 ];
 
 @NgModule({
