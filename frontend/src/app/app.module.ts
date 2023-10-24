@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ShoppingPageComponent } from './components/shopping-page/shopping-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HomeComponent } from './components/home/home.component';
     ResetPasswordComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    ProductDetailComponent,
+    ShoppingPageComponent
   ],
   imports: [
     BrowserModule,
