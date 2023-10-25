@@ -24,6 +24,10 @@ login(userObj:any){
     return this.http.post<any>('http://localhost:4000/auth' + '/send-reset-email', userObj)
   }
 
+  resetPassword(resetData:any){
+    return this.http.post<any>('http://localhost:4000/auth' + '/reset-password', resetData)
+  }
+
 }
 
 
