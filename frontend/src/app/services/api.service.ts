@@ -20,6 +20,10 @@ login(userObj:any){
     localStorage.removeItem('token');
   }
 
+  forgotPassword(userObj:any){
+    return this.http.post<any>('http://localhost:4000/auth' + '/send-reset-email', userObj)
+  }
+
 }
 
 
