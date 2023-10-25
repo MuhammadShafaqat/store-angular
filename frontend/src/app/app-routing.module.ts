@@ -9,6 +9,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ShoppingPageComponent } from './components/shopping-page/shopping-page.component';
+import { TestimonialsComponent } from './shared/testimonials/testimonials.component';
 
 const routes: Routes = [
   {path:'login', component:LogInComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'footer', component:FooterComponent},
   {path:'home', component:HomeComponent},
   {path:'productDetail', component:ProductDetailComponent},
-  {path:'shoppingPage', component:ShoppingPageComponent}
+  {path:'shoppingPage', component:ShoppingPageComponent},
+  {path:'testimonials', component: TestimonialsComponent}
 
 ];
 
