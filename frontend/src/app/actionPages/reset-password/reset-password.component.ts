@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -11,9 +12,16 @@ export class ResetPasswordComponent {
 
   resetForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService) {}
+  constructor(private formBuilder: FormBuilder, private api: ApiService,
+     private route:ActivatedRoute, private router:Router) {}
+     token!: string
 
   ngOnInit(): void {
+this.route.params.subscribe((value)=>{
+    this.token = value['token']
+    console.log(this.token)
+})
+
     this.resetForm = this.formBuilder.group({
       newPassword: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', [Validators.required]]
