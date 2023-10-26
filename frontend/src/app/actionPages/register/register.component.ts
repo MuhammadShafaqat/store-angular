@@ -31,7 +31,7 @@ onSubmit() {
 
     this.api.signUp(formData).subscribe(
       (response) => {
-        console.log('Registration successful:', response);
+        console.log('Registration successful:', response, formData);
         this.router.navigate(['/login'])
         // Handle success, e.g., show a success message or redirect
       },

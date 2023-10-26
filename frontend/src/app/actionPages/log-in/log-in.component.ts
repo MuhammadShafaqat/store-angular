@@ -25,7 +25,7 @@ constructor(private formBuilder: FormBuilder, private api:ApiService, private ro
 
       this.api.login(formData).subscribe(
         (res) => {
-          console.log('Sign-in successful:', res.token);
+          console.log('Sign-in successful:', res.token,formData);
           // Handle successful sign-in, e.g., navigate to a different page
         if (res.token) {
           localStorage.setItem('token', res.token)
