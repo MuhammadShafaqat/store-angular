@@ -13,6 +13,7 @@ import { TestimonialsComponent } from './shared/testimonials/testimonials.compon
 
 const routes: Routes = [
   {path:'login', component:LogInComponent},
+  {path:'', component:LogInComponent},
   {path:'register', component:RegisterComponent},
   {path:'forgotpassword', component:ForgotPasswordComponent},
   {path:'resetpassword/:token',component:ResetPasswordComponent},
