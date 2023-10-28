@@ -6,19 +6,26 @@ const productSchema = new mongoose.Schema({
     title: {
         type: String,
         require: true
-      },
-  price: Number,
+      },  
   description: {
     type: String,
     require: true
   },
   category: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category',
     require: true
   },
   image: {
     type: String,
-    require: true
+    default: ''
+  },
+  images:[{
+      type: String
+  }],
+  price:{
+    type:  Number,
+    default: 0
   },
   rating: {
     rate: Number,
