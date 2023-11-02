@@ -12,8 +12,9 @@ const productSchema = new mongoose.Schema({
     require: true
   },
   category: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Category',
+    // type: mongoose.Schema.Types.ObjectId,
+    // ref: 'Category',
+    type: String,
     require: true
   },
   image: {
@@ -28,8 +29,8 @@ const productSchema = new mongoose.Schema({
     default: 0
   },
   rating: {
-    rate: Number,
-    count: Number
+    rate: Number
+    
   }
     
 })
