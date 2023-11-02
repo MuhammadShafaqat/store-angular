@@ -3,11 +3,12 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const UserModel = require('../models/authModel/AuthModel');
 const saltRounds = 10;
-const secretKey = 'yourSecretKey'; // Replace with your secret key
+// const secretKey = 'yourSecretKey'; // Replace with your secret key
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 const TokenModel = require('../models/authModel/TokenModel');
-// const TokenModel = require('../models/authModel/AuthModel');
+require('dotenv').config();
+const secretKey = process.env.SECRET_KEY;
 
 // signIn post request
 router.post('/signIn', async (req, res)=>{

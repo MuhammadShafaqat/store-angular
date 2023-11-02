@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const verifyToken = require('./_helpers/middleware');
 const app = express();
 
 app.use(cors());
@@ -10,6 +11,7 @@ require('dotenv').config();
 const port = process.env.PORT || 3000;;
 const databaseUrl = process.env.DATABASE_URL;
 const apiKey = process.env.API_KEY;
+const secretKey = process.env.SECRET_KEY;
 
 // Use these variables in your application as needed.
 app.use(express.json());
@@ -19,11 +21,11 @@ app.use(express.json());
 const authRoutes = require('./routers/auth');
 const userRoutes = require('./routers/user');
 const categoryRoutes = require('./routers/category');
-const verifyToken = require('./_helpers/middleware');
+
 //
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes)
-app.use('/category', verifyToken,categoryRoutes)
+app.use('/categories',categoryRoutes)
 
 mongoose.connect(databaseUrl).then(()=>{
     console.log('successfully connected with database')

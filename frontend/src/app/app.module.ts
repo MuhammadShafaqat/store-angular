@@ -16,6 +16,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { ShoppingPageComponent } from './components/shopping-page/shopping-page.component';
 import { TestimonialsComponent } from './shared/testimonials/testimonials.component';
 import { AllProductsComponent } from './components/all-products/all-products.component';
+import { CategoryComponent } from './postData/category/category.component';
+import { PropertyComponent } from './postData/property/property.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AllProductsComponent } from './components/all-products/all-products.com
     ProductDetailComponent,
     ShoppingPageComponent,
     TestimonialsComponent,
-    AllProductsComponent
+    AllProductsComponent,
+    CategoryComponent,
+    PropertyComponent
   ],
   imports: [
     BrowserModule,

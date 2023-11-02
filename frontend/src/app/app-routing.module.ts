@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ShoppingPageComponent } from './components/shopping-page/shopping-page.component';
 import { TestimonialsComponent } from './shared/testimonials/testimonials.component';
+import { CategoryComponent } from './postData/category/category.component';
 
 const routes: Routes = [
   {path:'login', component:LogInComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'productDetail', component:ProductDetailComponent},
   {path:'shoppingPage', component:ShoppingPageComponent},
-  {path:'testimonials', component: TestimonialsComponent}
+  {path:'testimonials', component: TestimonialsComponent},
+  {path:'category', component:CategoryComponent}
 
 ];
 
