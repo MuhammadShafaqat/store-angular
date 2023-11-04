@@ -15,10 +15,14 @@ router.post('/categories', verifyToken, async (req, res) => {
         const savedCategory = await category.save();
 
         if (!savedCategory) {
-            return res.status(400).send('The category could not be created.');
+            return res.status(400).send( {success: false, message: 'The category could not be created.'});
         }
 
-        res.send(savedCategory);
+        res.status(201).send({
+            success: true,
+            message: 'Category created successfully',
+            category: savedCategory
+        });
     } catch (error) {
         res.status(500).send('Internal server error');
     }

@@ -14,10 +14,14 @@ router.post('/products', verifyToken, async (req, res) => {
         const savedProduct = await product.save();
 
         if (!savedProduct) {
-            return res.status(400).send('The category could not be created.');
+            return res.status(400).send('The product could not be created.');
         }
 
-        res.send(savedProduct);
+        res.status(201).send({
+            success: true,
+            message: 'Product created successfully',
+            category: savedProduct
+        });
     } catch (error) {
         res.status(500).send('Internal server error');
     }

@@ -27,6 +27,11 @@ export class ProductComponent implements OnInit {
     if (this.registrationForm.valid) {
       this.post.addProduct(this.registrationForm.value).subscribe(
         (response) => {
+          if (response && response.message) {
+            alert(response.message); // Show the message from the response
+          } else {
+            alert('Unknown success message'); // Show a default message if the response doesn't contain a "message" field
+          }
           // Handle successful response, e.g., redirect or show a success message.
           console.log('Product added successfully:', response);
         },
