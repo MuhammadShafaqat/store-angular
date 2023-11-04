@@ -3,12 +3,12 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const UserModel = require('../models/authModel/AuthModel');
 const saltRounds = 10;
-// const secretKey = 'yourSecretKey'; // Replace with your secret key
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 const TokenModel = require('../models/authModel/TokenModel');
-require('dotenv').config();
+// require('dotenv').config();
 const secretKey = process.env.SECRET_KEY;
+
 
 // signIn post request
 router.post('/signIn', async (req, res)=>{
@@ -24,7 +24,7 @@ router.post('/signIn', async (req, res)=>{
               return res.status(401).json({ success: false, message: 'Authentication failed' });
             }
             //create token        
-            const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: '1h' });
+            const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: '1y'});
             
             return res.status(200).json({ success: true, user: user.email, token: token });
           } catch (err) {

@@ -29,7 +29,7 @@ constructor(private formBuilder: FormBuilder, private api:ApiService, private ro
           // Handle successful sign-in, e.g., navigate to a different page
         if (res.token) {
           localStorage.setItem('token', res.token)
-          this.router.navigate(['/property']);
+          this.router.navigate(['/product']);
         }
         
         },

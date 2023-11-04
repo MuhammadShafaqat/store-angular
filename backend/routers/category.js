@@ -4,8 +4,8 @@ const verifyToken = require('../_helpers/middleware');
 const router = express.Router();
 
 // Create a new category
-// router.post('/categories', verifyToken, async (req, res) => {
-    router.post('/categories',  async (req, res) => {
+router.post('/categories', verifyToken, async (req, res) => {
+    // router.post('/categories',  async (req, res) => {
 
     try {
         // Create a new category instance

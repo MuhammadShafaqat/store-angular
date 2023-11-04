@@ -17,7 +17,7 @@ import { ShoppingPageComponent } from './components/shopping-page/shopping-page.
 import { TestimonialsComponent } from './shared/testimonials/testimonials.component';
 import { AllProductsComponent } from './components/all-products/all-products.component';
 import { CategoryComponent } from './postData/category/category.component';
-import { PropertyComponent } from './postData/property/property.component';
+import { ProductComponent } from './postData/product/product.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { PropertyComponent } from './postData/property/property.component';
     TestimonialsComponent,
     AllProductsComponent,
     CategoryComponent,
-    PropertyComponent
+    ProductComponent
+
   ],
   imports: [
     BrowserModule,

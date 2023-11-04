@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const verifyToken = require('./_helpers/middleware');
+// const verifyToken = require('./_helpers/middleware');
 const app = express();
 
 app.use(cors());
@@ -10,8 +10,7 @@ require('dotenv').config();
 // Now, you can access your environment variables like this:
 const port = process.env.PORT || 3000;;
 const databaseUrl = process.env.DATABASE_URL;
-const apiKey = process.env.API_KEY;
-const secretKey = process.env.SECRET_KEY;
+
 
 // Use these variables in your application as needed.
 app.use(express.json());

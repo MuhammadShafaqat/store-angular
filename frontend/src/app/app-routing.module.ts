@@ -11,7 +11,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { ShoppingPageComponent } from './components/shopping-page/shopping-page.component';
 import { TestimonialsComponent } from './shared/testimonials/testimonials.component';
 import { CategoryComponent } from './postData/category/category.component';
-import { PropertyComponent } from './postData/property/property.component';
+import { ProductComponent } from './postData/product/product.component';
+
 
 const routes: Routes = [
   {path:'login', component:LogInComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:'shoppingPage', component:ShoppingPageComponent},
   {path:'testimonials', component: TestimonialsComponent},
   {path:'category', component:CategoryComponent},
-  {path: 'property', component:PropertyComponent}
+  {path:'product', component:ProductComponent}
+
 
 ];
 
