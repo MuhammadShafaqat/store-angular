@@ -12,17 +12,13 @@ router.get('/getProducts', async (req, res)=> {
             return res.status(400).json({success: false, message: 'Product can not be created'});
          }
          res.status(200).json({
-            success: true,
-            message: 'Products retrieved successfully',
-            products: productList,
-        });
+            success: true, message: 'Products retrieved successfully', products: productList});
     } catch (error) {
         console.error(error); // Log the error for debugging purposes
         res.status(500).json({
             success: false,
             message: 'Internal server error',
-        });
-    
+        });    
     }
 })
 //Delet Product
@@ -61,24 +57,13 @@ router.put('/updateProduct/:id', async (req, res)=>{
         const updateProduct = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
 if (!updateProduct) {
-    return res.status(404).json({
-        success: false,
-        message: 'Product not found',
-    });
-}
+    return res.status(404).json({success: false, message: 'Product not found', });}
 
 res.json({
-    success: true,
-    message: 'Product updated successfully',
-    product: updateProduct,
-});
+    success: true, message: 'Product updated successfully', product: updateProduct,});
     } catch (error) {
         console.error(error); // Log the error for debugging purposes
-        res.status(500).json({
-            success: false,
-            message: 'Internal server error',
-        });
-    }
+        res.status(500).json({          success: false,           message: 'Internal server error',  });  }
 })
 // Create a new category
 router.post('/addProduct', async (req, res) => {
@@ -90,15 +75,31 @@ router.post('/addProduct', async (req, res) => {
         if (!savedProduct) {
             return res.status(400).send('The product could not be created.');
         }
-        res.status(201).send({
-            success: true,
-            message: 'Product created successfully',
-            category: savedProduct
-        });
-    } catch (error) {
+        res.status(201).send({ success: true,  message: 'Product created successfully', category: savedProduct });}
+        catch (error) {
+            console.error(error);
         res.status(500).send('Internal server error');
     }
 });
+//isFeaturedProducts
+// Get Product
+router.get('/isFeatured', async (req, res)=> {
+                
+    try {
+         const productList = await Product.find({isFeatured:true});
+         if (!productList) {
+            return res.status(400).json({success: false, message: 'Product can not be created'});
+         }
+         res.status(200).json({
+            success: true, message: 'Products retrieved successfully', products: productList});
+    } catch (error) {
+        console.error(error); // Log the error for debugging purposes
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error',
+        });    
+    }
+})
 //CountProducts
 router.get('/countProducts', async (req, res) => {
     try {

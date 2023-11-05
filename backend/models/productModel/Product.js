@@ -29,10 +29,12 @@ const productSchema = new mongoose.Schema({
     default: 0
   },
   rating: {
-    rate: Number
-    
-  }
-    
+    rate: Number    
+  },
+  isFeatured:{
+    type: Boolean,
+    default: false
+}    
 })
 
 module.exports = mongoose.model('Product', productSchema)
