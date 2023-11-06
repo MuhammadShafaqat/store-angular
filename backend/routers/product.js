@@ -1,18 +1,36 @@
 const express = require('express');
 const Product = require('../models/productModel/Product');
-const verifyToken = require('../_helpers/middleware');
+const Category = require('../models/categoryModel/Category');
 const router = express.Router();
 
 // Get Product
 router.get('/getProducts', async (req, res)=> {
                 
     try {
-         const productList = await Product.find();
+         const productList = await Product.find().populate('category');
          if (!productList) {
             return res.status(400).json({success: false, message: 'Products not found'});
          }
          res.status(200).json({
             success: true, message: 'Products retrieved successfully', products: productList});
+    } catch (error) {
+        console.error(error); // Log the error for debugging purposes
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error',
+        });    
+    }
+})
+// Get Product
+router.get('/getSingleProduct/:id', async (req, res)=> {
+                
+    try {
+         const product = await Product.findById(req.params.id).populate('category');
+         if (!product) {
+            return res.status(400).json({success: false, message: 'Product not found'});
+         }
+         res.status(200).json({
+            success: true, message: 'Product retrieved successfully', product: product});
     } catch (error) {
         console.error(error); // Log the error for debugging purposes
         res.status(500).json({
@@ -54,6 +72,14 @@ router.delete('/deleteProduct/:id', async (req, res) => {
 // updateProduct
 router.put('/updateProduct/:id', async (req, res)=>{
     try {
+        // if (!mongoose.isValidObjectId(req.params.id)) {
+        //     return res.status(500).json({success:false,message:'Invalid object Id'})
+        // }
+        // const category = await Category.findById(req.body.category);
+        // if (!category) {
+        //     return res.status(400).json({success:false,message:'Invalid category'})
+        // }
+
         const updateProduct = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
 if (!updateProduct) {
@@ -69,6 +95,10 @@ res.json({
 router.post('/addProduct', async (req, res) => {
     try {
         // Create a new category instance
+        // const category = await Category.findById(req.body.category);
+        // if(!category) return res.status(400).json({success:false, message:'Invalid category'})
+
+// create product 
         const product = new Product(req.body);     
         // Save the category to the database
         const savedProduct = await product.save();
