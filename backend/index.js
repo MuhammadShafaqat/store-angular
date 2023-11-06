@@ -26,7 +26,7 @@ const verifyToken = require('./_helpers/middleware');
 //
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes)
-app.use('/categories',categoryRoutes);
+app.use('/categories', verifyToken,categoryRoutes);
 app.use('/products', verifyToken, produtRoutes)
 
 mongoose.connect(databaseUrl).then(()=>{

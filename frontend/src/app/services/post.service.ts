@@ -17,10 +17,10 @@ export class PostService {
 
   constructor(private http:HttpClient) { }
   addCategory(userObj: any){ 
- return this.http.post<any>('http://localhost:4000/categories' + '/categories', userObj, {'headers': this.addHeader()})
+ return this.http.post<any>('http://localhost:4000/categories' + '/addCategory', userObj, {'headers': this.addHeader()})
   }
 
   addProduct(userObj:any){
-  return this.http.post<any>('http://localhost:4000/products' + '/products', userObj, {'headers': this.addHeader()})
+  return this.http.post<any>('http://localhost:4000/products' + '/addProduct', userObj, {'headers': this.addHeader()})
   }
 }

@@ -9,7 +9,7 @@ router.get('/getProducts', async (req, res)=> {
     try {
          const productList = await Product.find();
          if (!productList) {
-            return res.status(400).json({success: false, message: 'Product can not be created'});
+            return res.status(400).json({success: false, message: 'Products not found'});
          }
          res.status(200).json({
             success: true, message: 'Products retrieved successfully', products: productList});
@@ -63,7 +63,7 @@ res.json({
     success: true, message: 'Product updated successfully', product: updateProduct,});
     } catch (error) {
         console.error(error); // Log the error for debugging purposes
-        res.status(500).json({          success: false,           message: 'Internal server error',  });  }
+        res.status(500).json({success: false, message: 'Internal server error'});  }
 })
 // Create a new category
 router.post('/addProduct', async (req, res) => {
