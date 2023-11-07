@@ -12,6 +12,7 @@ import { ShoppingPageComponent } from './components/shopping-page/shopping-page.
 import { TestimonialsComponent } from './shared/testimonials/testimonials.component';
 import { CategoryComponent } from './postData/category/category.component';
 import { ProductComponent } from './postData/product/product.component';
+import { AllProductsComponent } from './components/all-products/all-products.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path:'shoppingPage', component:ShoppingPageComponent},
   {path:'testimonials', component: TestimonialsComponent},
   {path:'category', component:CategoryComponent},
-  {path:'product', component:ProductComponent}
+  {path:'product', component:ProductComponent},
+  {path:'all-products', component:AllProductsComponent}
 
 
 ];

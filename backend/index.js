@@ -10,12 +10,8 @@ require('dotenv').config();
 // Now, you can access your environment variables like this:
 const port = process.env.PORT || 3000;;
 const databaseUrl = process.env.DATABASE_URL;
-
-
 // Use these variables in your application as needed.
 app.use(express.json());
-
-
 //Routes 
 const authRoutes = require('./routers/auth');
 const userRoutes = require('./routers/user');

@@ -1,0 +1,54 @@
+/* product.component.css */
+
+/* Custom styles for the product card */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px; /* Limit the card width */
+    margin: 0 auto; /* Center the card horizontally */
+  }
+  
+  /* Custom styles for the product title */
+  .card-title {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Custom styles for the product description */
+  .card-text {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  /* Custom styles for the rating badge */
+  .badge-primary {
+    background-color: #007bff;
+  }
+  
+  /* Custom styles for the "Add to Cart" button */
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    margin-top: 10px; /* Add space between the button and the card */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Custom branding styles */
+  .brand {
+    text-align: center;
+    margin-top: 20px; /* Add space between the card and the branding */
+  }
+  
+  .brand h1 {
+    color: #007bff; /* Customize the brand color */
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+  

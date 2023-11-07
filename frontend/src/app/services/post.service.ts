@@ -14,8 +14,12 @@ export class PostService {
     })
     return headers;
   }
-
   constructor(private http:HttpClient) { }
+getData(): Observable<any>{
+  
+ return this.http.get('https://fakestoreapi.com/products')
+}
+
   addCategory(userObj: any){ 
  return this.http.post<any>('http://localhost:4000/categories' + '/addCategory', userObj, {'headers': this.addHeader()})
   }
