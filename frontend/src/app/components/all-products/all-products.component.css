@@ -31,7 +31,8 @@
   .btn-primary {
     background-color: #007bff;
     border: none;
-    margin-top: 10px; /* Add space between the button and the card */
+    margin-top: 10px; 
+    padding-top: 0;/* Add space between the button and the card */
   }
   
   .btn-primary:hover {
@@ -50,5 +51,10 @@
     font-weight: bold;
     margin: 0;
     padding: 0;
+  }
+  .button{ 
+    margin-top: 1rem;
+    display: flex;
+  justify-content: center;
   }
   
