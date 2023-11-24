@@ -1,0 +1,40 @@
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 30px; Adjust the gap between products as needed */
+    justify-content: space-around;
+    
+  }
+
+.product{
+    /* background-color: aquamarine; */
+    width: 300px;
+    padding: 10px;
+    margin-top: 3rem;
+}
+.product img{    
+    width: 250px;
+    max-height: 250px;
+}
+.product .heading{
+    font-size:large;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    margin-top: .7rem;
+    white-space: nowrap;
+}
+.product .description{
+    /* font-size:large; */
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    /* margin-top: .4rem; */
+    white-space: nowrap;
+}
+.product .price{
+    margin-top: .3rem;
+}
+.product .btn.btn-primary{
+    margin-top: .7rem;
+    width: 270px;
+} 

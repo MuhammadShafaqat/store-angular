@@ -15,7 +15,7 @@ constructor(private post:PostService){}
   ngOnInit(): void {
     this.post.getData().subscribe((data: any)=>{
       this.products = data
-      this.products = this.products.filter(product => product.id <= 5)
+      this.products = this.products.filter(product => product.id <= 10)
       console.log(this.products)
 
     },(error: any)=>{

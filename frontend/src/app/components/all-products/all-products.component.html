@@ -1,24 +1,19 @@
 <div class="container">
-<div *ngFor="let item of products">
-    <div class="card">
-        <img src={{item.image}} class="card-img-top" alt="Product Image">
-        <div class="card-body">
-          <h5 class="card-title">{{item.title}}</h5>
-          <p class="card-text">{{item.description}}</p>
-        </div>
-        <div class="card-footer">
-          <div class="d-flex justify-content-between">
-            <div>
-             
-              <span class="badge badge-primary">{{item.rating}}</span>
-            </div>
-            <div class="button">
-              <button class="btn btn-primary">Add to Cart</button>
-            </div>
-          </div>
-        </div>
+  <div class="products-container">
+      <div  *ngFor="let product of products" class="products">
+        <a   [routerLink]="['/products', product.id]">
+            <div class="product" >
+                <img src={{product.image}}   alt="" srcset="">
+                <div class="heading fw-bold">{{product.title}}</div>
+                <div class="description">{{product.description}}</div>
+                <div class="price"><strong>PRICE:</strong> {{product.price | currency}}</div>
+                <button type="button" class="btn btn-primary" >Add to Cart</button>
+            </div>  
+        </a>
+        
       </div>
-</div>
+      
+  </div>
 </div>
 
   

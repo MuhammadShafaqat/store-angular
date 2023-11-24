@@ -1,1 +1,11 @@
-<p>product-detail works!</p>
+<div class="container">
+    <div class="detail-page" *ngIf="product">
+      <div class="image">
+        <img [src]="product?.img" [alt]="product?.title || 'Product Image'" />
+      </div>
+    </div>
+    <div *ngIf="!product"> <!-- Display message when product is not available -->
+      Product not found!
+    </div>
+  </div>
+  

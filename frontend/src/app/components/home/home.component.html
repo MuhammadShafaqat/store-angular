@@ -1,1 +1,14 @@
-<p>home works!</p>
+<div class="container">
+    <div class="products-container">
+        <div  *ngFor="let product of products" class="products">
+            <div class="product" >
+                <img src={{product.image}}   alt="" srcset="">
+                <div class="heading fw-bold">{{product.title}}</div>
+                <div class="description">{{product.description}}</div>
+                <div class="price"><strong>PRICE:</strong> {{product.price | currency}}</div>
+                <button type="button" class="btn btn-primary" disabled>Add to Cart</button>
+            </div>   
+        </div>
+        
+    </div>
+</div>
