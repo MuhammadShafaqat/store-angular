@@ -1,0 +1,21 @@
+.card {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    /* Additional styles for spacing, alignment, etc. */
+  }
+  .card .card-item{
+    /* margin-right: 10px; */
+  }
+    
+  .card-item label {
+    font-weight: bold;
+  }
+  
+  /* Media query for smaller screens */
+ 
+  

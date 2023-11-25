@@ -1,3 +1,9 @@
+.card-top{
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
 
 .products-container {
   display: flex;
