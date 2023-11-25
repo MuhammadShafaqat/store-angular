@@ -1,0 +1,17 @@
+.detail-page{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+}
+.details .currency{
+    margin-top: 2rem;
+}
+.details .select{
+    display: none;
+}
+.details .text .element{
+    outline: none;
+    text-align: center;
+    font-weight: bold;
+}

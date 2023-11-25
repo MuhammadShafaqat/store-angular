@@ -1,9 +1,24 @@
 <div class="container">
-    <div class="detail-page" *ngIf="product">
+    <div class="detail-page mt-5" *ngIf="product">
       <div class="image">
-        <!-- <img src={{product.image}} [alt]="product?.title || 'Product Image'" /> -->
-        <img src={{product?.image}}   alt={{product?.title}} srcset="">
+        <img src={{product?.image}} width="300" height="450" alt={{product?.title}} srcset="">
       </div>
+            <div class="details">
+              <strong class="title">{{product.title}}</strong><br>
+              <div class="price fw-bold mt-3">{{product.price | currency}}</div><br>
+              <select id="sizeSelect" name="size" class="select">
+                <option value="small">Small</option>                
+                </select><br>
+                <div class="buttton-section mt-3 text">
+                  <input type="text" class="element" style="width: 7%;"> <button type="button" class="btn btn-danger mx-3">ADD TO CART</button>
+                </div>
+                <div class="description mt-4" style="width: 700px;">
+                  <label for="description" class="fw-bold">Product Details:</label><br><br>
+                  {{product.description}}
+                </div>
+
+
+            </div>
     </div>
     <div *ngIf="!product"> <!-- Display message when product is not available -->
       Product not found!
