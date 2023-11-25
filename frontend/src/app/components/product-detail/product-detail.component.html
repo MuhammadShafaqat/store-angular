@@ -1,7 +1,8 @@
 <div class="container">
     <div class="detail-page" *ngIf="product">
       <div class="image">
-        <img [src]="product?.img" [alt]="product?.title || 'Product Image'" />
+        <!-- <img src={{product.image}} [alt]="product?.title || 'Product Image'" /> -->
+        <img src={{product?.image}}   alt={{product?.title}} srcset="">
       </div>
     </div>
     <div *ngIf="!product"> <!-- Display message when product is not available -->

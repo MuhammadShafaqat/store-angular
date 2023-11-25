@@ -15,16 +15,27 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.productId = params['id'];
-     
+      this.productId = parseInt(params['id']) ;
+     console.log(typeof this.productId)
       this.getProductDetails(this.productId);
     });
   }
 
   getProductDetails(productId: number): void {
-    this.post.getData().subscribe((items: any) => {
+    this.post.getData().subscribe((items: any[]) => {
+      console.log('All items:', items); 
+  
       this.product = items.find((item: any) => item.id === productId);
-      console.log(this.product.id)
+      console.log('Found product:', this.product); 
+  
+      if (this.product) {
+        this.product = this.product;
+      } else {
+        // Handle case when product with the given ID is not found
+        console.log('Product not found');
+      }
     });
   }
+  
+  
 }
