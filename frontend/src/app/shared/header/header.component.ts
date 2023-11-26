@@ -10,8 +10,7 @@ import { PostService } from 'src/app/services/post.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-
+searchItem:any = ''
  
 constructor(private api:ApiService,private data:DataService, private router:Router){
 
@@ -19,10 +18,17 @@ constructor(private api:ApiService,private data:DataService, private router:Rout
   ngOnInit(): void {
     
   }
-  sendToService(title:string){
-    this.data.inputData(title);
-    // alert(title)
-    
+  sendToService(title: string) {
+    if (title.trim() !== '') {
+      this.searchItem = title.trim();
+      this.data.inputData(this.searchItem);
+    } else {
+      // If the input is empty, send an empty value to the service
+      this.data.inputData('');
+    }
+  
+    // Reset the input field after sending the value to the service
+    this.searchItem = '';
   }
   signOut(){
   this.api.signOut();

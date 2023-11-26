@@ -19,6 +19,7 @@ import { AllProductsComponent } from './components/all-products/all-products.com
 import { CategoryComponent } from './postData/category/category.component';
 import { ProductComponent } from './postData/product/product.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

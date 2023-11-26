@@ -19,10 +19,10 @@ constructor(private post:PostService, private data:DataService){}
   ngOnInit(): void {
 // we are getting input header data 
 this.data.data$.subscribe(data =>{
-  if (!data) {
-     return this.products;
-  }else{
+  if (data) {
     return this.products =  this.filterProducts.filter((product)=>product.title.toLowerCase().includes(data.toLowerCase()))
+  }else{
+    return this.products = this.filterProducts
   }
   
 })
