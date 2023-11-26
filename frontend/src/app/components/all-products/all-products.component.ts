@@ -33,8 +33,8 @@ this.data.data$.subscribe(data =>{
     this.post.getData().subscribe((data: any)=>{
       this.products = data
       this.filterProducts = data
-      this.products = this.products.filter(product => product.id <= 10)
-      console.log(this.products)
+      this.products = this.products.filter(product => product.id <= 20)
+      // console.log(this.products)
 
     },(error: any)=>{
       this.error = 'An error occurred while fetching data. Please try again later.';
