@@ -36,6 +36,7 @@ import { ProductComponent } from './postData/product/product.component';
     CategoryComponent,
     ProductComponent
 
+
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,7 @@ import { ProductComponent } from './postData/product/product.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
